@@ -1,0 +1,164 @@
+/* ==========================================
+   トップポータル専用スタイル (css/index.css)
+========================================== */
+
+/* ベーススタイル */
+body {
+    background-image: url('../images/背景.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+}
+
+/* ヘッダーエリア */
+.portal-header {
+    text-align: center;
+    padding: 30px 15px 10px;
+}
+
+.portal-title {
+    font-size: clamp(0.5rem, 4vw, 1.8rem);
+    color: #1a252f;
+    margin: 0 0 10px 0;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    /* スマホで画面からはみ出さないように折り返しを許可 */
+    white-space: nowrap;
+    max-width: 90%;
+    word-break: break-word;
+}
+
+.portal-subtitle {
+    color: #333;
+    font-size: clamp(0.6rem, 2.5vw, 1rem);
+    margin: 8px 0 0 0;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+/* メインコンテナ（台座） */
+.portal-main {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; /* スマホ時に折り返せるように変更 */
+    max-width: 850px;
+    margin: 15px auto;
+    padding: 25px 20px;
+    
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-sizing: border-box;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    flex: 1 1 380px; /* PCでは並び、幅が狭くなると自動で縦並び化 */
+    max-width: 100%;
+    min-width: 0;
+}
+
+/* カード本体 */
+.portal-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e1e8ed;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portal-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.portal-card i {
+    font-size: clamp(1.5rem, 5vw, 2.8rem);
+    color: #0056b3;
+    margin-bottom: 12px;
+}
+
+.portal-card h2 {
+    font-size: clamp(0.8rem, 2.8vw, 1.15rem);
+    color: #1a252f;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.portal-card p {
+    color: #555;
+    font-size: clamp(0.4rem, 2.2vw, 0.9rem);
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+
+.btn-style {
+    display: inline-block;
+    background-color: #0056b3;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: clamp(0.75rem, 2.3vw, 0.85rem);
+    white-space: nowrap;
+}
+
+/* クレジット表記 */
+.photo-credit {
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    font-size: 0.75rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 3px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* 📱 スマホ用スタイル調整 (600px以下) */
+@media (max-width: 600px) {
+    .portal-header {
+        padding: 20px 10px 5px;
+    }
+
+    .portal-main {
+        gap: 15px;
+        padding: 15px 12px;
+        margin: 10px 12px;
+    }
+
+    .portal-card {
+        padding: 18px 12px;
+    }
+
+    .photo-credit {
+        font-size: 0.65rem;
+        bottom: 5px;
+        right: 5px;
+    }
+}
