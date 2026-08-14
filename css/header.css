@@ -271,7 +271,7 @@
     
     /* 1. バー自体を細長くスリムにし、左右の余白を詰める */
     .main-header {
-        height: 52px !important;    /* 70px から 52px にスリム化 */
+        height: 40px !important;    /* 70px から 52px にスリム化 */
         padding: 0 10px !important; /* 左右の余白を狭くしてコンテンツ幅を確保 */
     }
 
@@ -295,7 +295,7 @@
     /* 3. 大会名を消さずに、中央に小さくジャストフィット配置 */
     .header-center {
         display: block !important;     /* display: none を解除して表示 */
-        font-size: 0.85rem !important; /* 横幅に収まるように文字サイズを調整 */
+        font-size: 0.55rem !important; /* 横幅に収まるように文字サイズを調整 */
         padding: 0 4px !important;     /* 左右のクッションを最小限に */
         flex: 1 !important;            /* 左右の余白に負けないよう中央で最大化 */
         text-align: center !important; /* 確実に中央配置 */

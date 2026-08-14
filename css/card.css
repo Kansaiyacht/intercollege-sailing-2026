@@ -1,51 +1,100 @@
+/* ==========================================
+   メインカード（PC基本設定）
+   ========================================== */
 .main-card {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     width: 90%;
     max-width: 800px;
     margin: 40px auto;
     margin-top: 100px;
     padding: 25px;
-    display: flex;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
     gap: 20px;
+    box-sizing: border-box;
 }
-.image-area img {
-    width: 150px;
-    border-radius: 8px;
+
+.main-card .image-area {
+    flex-shrink: 0;
+    width: 140px;
 }
-.text-area {
+
+.main-card .image-area img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.main-card .text-area {
     flex: 1;
+    min-width: 0; /* はみ出し防止 */
 }
 
-/* card.css */
+/* タイトル（PC） */
+h1.card-title {
+    font-size: 1.25rem !important;
+    font-weight: bold !important;
+    color: #1e293b !important;
+    line-height: 1.4 !important;
+    margin: 0 0 10px 0 !important;
+    word-break: keep-all;
+}
 
-/* 画面幅が500px以下の時の設定 */
-/* card.css */
+/* 日程（PC） */
+p.card-date {
+    font-size: 0.9rem !important;
+    color: #475569 !important;
+    line-height: 1.5 !important;
+    margin: 0 0 10px 0 !important;
+}
 
-@media (max-width: 500px) {
+/* 注意書き（PC） */
+p.card-notice {
+    font-size: 0.85rem !important;
+    color: #d97706 !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+}
+
+
+/* ==========================================
+   スマホ表示の設定（画面幅 768px 以下）
+   ========================================== */
+@media screen and (max-width: 660px) {
     .main-card {
-        flex-direction: column; 
-        height: auto;           /* 高さを固定せず、中身に合わせる */
-        width: 95%;             /* 画面端にピッタリくっつかないよう少し余裕を持つ */
-        margin: 10px auto;      /* 中央寄せ */
-        margin-top: 100px;
-        overflow: hidden;       /* はみ出した部分を隠す（角丸を維持するため） */
+        flex-direction: column !important; /* 縦並びにする */
+        align-items: center !important;
+        text-align: center !important;     /* 文字を中央揃え */
+        padding: 20px 15px !important;
+        margin-top: 70px !important;
+        width: 92% !important;
     }
 
-    .image-area {
-        width: 100%;            /* 横幅いっぱいにする */
-        height: 200px;          /* スマホで見やすい高さに固定（お好みで） */
+    .main-card .image-area {
+        width: 100px !important;          /* スマホ用に画像を小さく */
+        margin-bottom: 10px !important;
     }
 
-    .image-area img {
-        width: 100%;            /* 親要素の幅に合わせる */
-        height: 100%;           /* 親要素の高さに合わせる */
-        object-fit: cover;      /* ★重要：アスペクト比を保ったまま枠いっぱいに広げる */
-        display: block;         /* 下に謎の隙間ができるのを防ぐ */
+    /* タイトル（スマホ：劇的に小さく変更） */
+    h1.card-title {
+        font-size: 0.85rem !important;    /* 確実に入る極小サイズ */
+        line-height: 1.35 !important;
+        margin-bottom: 8px !important;
     }
 
-    .text-area {
-        width: 100%;            /* 文章エリアも横幅いっぱい */
-        padding: 15px;          /* スマホ用の程よい余白 */
-        box-sizing: border-box; /* パディングを含めた幅計算にする */
+    /* 日程（スマホ） */
+    p.card-date {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* 注意書き（スマホ） */
+    p.card-notice {
+        font-size: 0.7rem !important;
     }
 }
