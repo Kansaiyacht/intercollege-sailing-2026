@@ -1,0 +1,77 @@
+/* ==========================================
+   協賛・ご協賛企業セクション専用CSS (css/sponsor.css)
+========================================== */
+
+/* 協賛エリア全体のコンテナ */
+.sponsor-section {
+    max-width: 850px;
+    margin: 20px auto;
+    padding: 20px 15px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+/* タイトル */
+.sponsor-title {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: #1a252f;
+    margin: 0 0 15px 0;
+    font-weight: bold;
+}
+
+/* 💻 PC版スタイル：6列並び (12個で 2×6 の行列) */
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    align-items: center;
+}
+
+/* 各ロゴを囲む白いカード枠 */
+.sponsor-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    padding: 8px;
+    height: 60px;
+    box-sizing: border-box;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🖼️ 画像の縦横比を崩さず枠内に収める設定 */
+.sponsor-card img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* 📱 スマホ版スタイル (600px以下)：3列並び (12個で 4×3 の行列) */
+@media (max-width: 600px) {
+    .sponsor-section {
+        padding: 15px 10px;
+        margin: 15px 10px;
+    }
+
+    .sponsor-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .sponsor-card {
+        height: 50px;
+        padding: 5px;
+    }
+}
