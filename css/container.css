@@ -14,7 +14,7 @@
 /* 左上の一文 */
 .intro-text {
     text-align: left;
-    font-size: 0.9rem;
+    font-size: 1.0rem;
     color: #555;
     margin-bottom: 20px;
     border-left: 4px solid #333;
@@ -360,7 +360,7 @@ a.info-box * {
     }
 
     .question-card p {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         line-height: 1.4;
         margin-bottom: 15px;
     }
@@ -477,6 +477,11 @@ a.info-box * {
     transition: transform 0.3s;
 }
 
+/* 横長画像を枠内に収める指定 */
+.goods-image-wrapper.contain-img img {
+    object-fit: contain; /* はみ出しをカットせず、全体を枠内に収める */
+}
+
 .goods-card:hover .goods-image-wrapper img {
     transform: scale(1.05);
 }
@@ -511,6 +516,8 @@ a.info-box * {
 }
 
 
+
+
 /* --- スマホ表示時の調整 (600px以下) --- */
 @media (max-width: 600px) {
     .goods-section {
@@ -535,3 +542,4 @@ a.info-box * {
         font-size: 0.85rem;
     }
 }
+
