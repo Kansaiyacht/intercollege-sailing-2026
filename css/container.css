@@ -1,773 +1,537 @@
 /* ==================================================
-
-   【前半】PC版・基本の設定（デスクトップ環境向け）
-
+   【前半】PC版・基本の設定（デフォルト）
    ================================================== */
 
-
-
 /* 共通・基本レイアウト */
-
 .container {
-
     background-color: rgba(255, 255, 255, 0.8);
-
     width: 90%;
-
     max-width: 1200px;
-
     margin: 20px auto;
-
     padding: 20px;
-
 }
-
-
 
 /* 左上の一文 */
-
 .intro-text {
-
     text-align: left;
-
     font-size: 0.9rem;
-
     color: #555;
-
     margin-bottom: 20px;
-
     border-left: 4px solid #333;
-
     padding-left: 10px;
-
 }
-
-
 
 /* 列の間に入れる文章 */
-
 .row-divider {
-
     text-align: left;
-
     font-size: 1.4rem;
-
     margin: 40px 0 15px;
-
     font-weight: bold;
-
     color: #2c3e50;
-
     border-bottom: 2px solid #eee;
-
     padding-bottom: 5px;
-
 }
-
-
 
 /* ボックスを並べる列の箱 */
-
 .box-row {
-
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 20px;
-
     margin-bottom: 20px;
-
     justify-content: center;
-
 }
-
-
 
 /* 白いボックス単体のデザイン */
-
 .info-box {
-
     background-color: #ffffff;
-
     border: 1px solid #ddd;
-
     border-radius: 8px;
-
     padding: 20px;
-
     flex: 1;
-
     min-width: 200px;
-
     text-align: center;
-
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-
-    transition: transform 0.2s;
-
+    transition: transform 0.2s, border-color 0.2s;
 }
-
-
 
 /* リンクになった info-box の見た目をリセット */
-
 a.info-box {
-
     text-decoration: none;
-
     color: inherit;
-
     display: block;
-
-    cursor: pointer !important;
-
+    cursor: pointer;
 }
 
-
-
-/* ホバー時の反応を少し強調 */
-
-a.info-box:hover {
-
+/* ホバー時の反応 */
+a.info-box:hover,
+.info-box:hover {
     background-color: #f8fbff;
-
     border-color: #004488;
-
     transform: translateY(-5px);
-
 }
-
-
-
-/* 中の文字も指マークにする */
 
 a.info-box * {
-
-    cursor: pointer !important;
-
+    cursor: pointer;
 }
-
-
 
 /* 1列目のボックス専用の設定：幅を半分にする */
-
 .special-box {
-
-    flex: 0 1 50% !important;
-
+    flex: 0 1 50%;
     margin-right: auto;
-
 }
-
-
-
-.info-box:hover {
-
-    transform: translateY(-5px);
-
-    border-color: #333;
-
-}
-
-
 
 /* ボックス内の要素 */
-
 .info-box i {
-
     font-size: 2rem;
-
     color: #34495e;
-
     margin-bottom: 10px;
-
 }
-
-
 
 .info-box h3 {
-
     margin: 10px 0;
-
     font-size: 1.2rem;
-
 }
-
-
 
 .info-box p {
-
     font-size: 0.9rem;
-
     color: #666;
-
     margin: 0;
-
 }
-
-
 
 /* --- YouTubeセクションの基本設定 --- */
-
 .youtube-section-outer {
-
-    width: 100% !important;
-
-    display: flex !important;
-
-    justify-content: center !important;
-
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 横方向の中央揃え */
+    align-items: center;
     padding: 20px 0 40px 0;
-
     background-color: transparent;
-
     clear: both;
-
+    box-sizing: border-box;
 }
-
-
 
 .youtube-center-box {
-
-    width: 90% !important;
-
-    max-width: 1000px !important;
-
-    margin: 0 auto !important;
-
-    text-align: center !important;
-
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* カード自体を中央に配置 */
 }
-
-
 
 .youtube-card {
-
     background-color: rgba(255, 255, 255, 0.95);
-
-    width: 80% !important;
-
-    max-width: 1000px !important;
-
+    width: 100%;            /* 横幅を親要素一杯にしつつ max-width で制限 */
+    max-width: 900px;       /* お好みの最大幅に調整可能 */
+    margin: 0 auto;         /* 左右マージン自動で中央寄せ */
     padding: 30px;
-
     border-radius: 15px;
-
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
-    text-align: center !important;
-
+    text-align: center;
+    box-sizing: border-box;
 }
-
-
 
 .video-wrapper {
-
     position: relative;
-
-    width: 100% !important;
-
-    padding-top: 56.25% !important;
-
+    width: 100%;
     background: #000;
-
     border-radius: 8px;
-
     overflow: hidden;
-
     margin-bottom: 20px;
-
 }
 
+/* 画像表示時のスタイル */
+.video-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.2s;
+}
 
+.video-wrapper a:hover img {
+    opacity: 0.85; /* ホバー時にうっすら透過 */
+}
 
+/* 動画埋め込み(iframe)切り替え時のスタイル */
 .video-wrapper iframe {
-
-    position: absolute;
-
-    top: 0;
-
-    left: 0;
-
-    width: 100% !important;
-
-    height: 100% !important;
-
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 16:9の比率を維持 */
     border: none;
-
+    display: block;
 }
-
-
 
 .youtube-info-text h3 {
-
     color: #ff0000;
-
     font-size: 24px;
-
     margin: 10px 0;
-
     font-weight: bold;
-
 }
-
-
 
 .youtube-info-text p {
-
     font-size: 16px;
-
-    color: #333 !important;
-
+    color: #333;
     margin-bottom: 15px;
-
     font-weight: bold;
-
 }
-
-
 
 .subscribe-button-wrap {
-
     display: inline-block;
-
     margin: 10px auto;
-
 }
 
-
-
-/* --- 質問セクションの基本設定（カラー共通） --- */
-
+/* --- 質問セクションの基本設定 --- */
 .btn-faq {
-
     background-color: #004488;
-
     color: white;
-
 }
-
-
 
 .btn-faq:hover {
-
     background-color: #003366;
-
     transform: translateY(-2px);
-
 }
-
-
 
 .btn-contact {
-
     background-color: #f0f0f0;
-
     color: #333;
-
     border: 1px solid #ccc;
-
 }
-
-
 
 .btn-contact:hover {
-
     background-color: #e0e0e0;
-
     transform: translateY(-2px);
-
 }
-
-
-
 
 
 /* --------------------------------------------------
-
-   ★PC専用の個別調整スタイル（画面幅769px以上）★
-
+   PC専用の個別調整スタイル（画面幅601px以上）
    -------------------------------------------------- */
-
-@media (min-width: 769px) {
-
-    /* PC用：質問カード全体の余白を広げる */
-
+@media (min-width: 601px) {
     .question-card {
-
-        padding: 30px !important;
-
+        padding: 30px;
         border-radius: 8px;
-
     }
-
-
-
-    /* PC用：大きな青いアイコン */
 
     .question-icon {
-
-        font-size: 40px !important;
-
-        margin-bottom: 15px !important;
-
+        font-size: 40px;
+        margin-bottom: 15px;
     }
-
-
-
-    /* PC用：説明文の文字サイズ */
 
     .question-card p {
-
-        font-size: 14px !important;
-
-        line-height: 1.6 !important;
-
-        margin-bottom: 25px !important;
-
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 25px;
     }
-
-
-
-    /* PC用：ボタンをゆったり横並びにする */
 
     .question-buttons {
-
-        display: flex !important;
-
-        flex-direction: row !important;
-
-        gap: 20px !important;
-
-        justify-content: center !important;
-
-        width: auto !important;
-
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+        width: auto;
     }
-
-
-
-    /* PC用：ボタンを1行（アイコン 文字）の横長に戻す設定 */
 
     .question-buttons a {
-
-        display: flex !important;
-
-        flex-direction: row !important;    /* 1行に並べる */
-
-        align-items: center !important;
-
-        justify-content: center !important;
-
-       
-
-        padding: 12px 25px !important;    /* PC用の広いサイズ */
-
-        font-size: 16px !important;        /* 大きな文字 */
-
-       
-
-        width: auto !important;            
-
-        min-width: 160px !important;       /* ゆったりした最小幅 */
-
-        max-width: none !important;        /* スマホの制限を解除 */
-
-        min-height: 0 !important;          
-
-       
-
-        gap: 8px !important;               /* アイコンと文字の隙間 */
-
-        border-radius: 5px !important;     /* 元の角丸 */
-
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 25px;
+        font-size: 16px;
+        width: auto;
+        min-width: 160px;
+        gap: 8px;
+        border-radius: 5px;
     }
 
+    .question-buttons a i {
+        font-size: 1rem;
+    }
+}
 
+/* --- 横長スポンサーバナーの設定 --- */
+.sponsor-banner {
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+}
 
-    /* PC用：ボタンの中のアイコンサイズ */
+.sponsor-banner img {
+    width: 100%;
+    max-width: 1200px; /* バナーの最大幅（containerに合わせる） */
+    height: auto;      /* アスペクト比を維持 */
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px; /* 緩やかな角丸（不要なら削除してください） */
+}
+
+/* ==================================================
+   【後半】スマホ版の設定（画面幅600px以下）
+   ================================================== */
+@media (max-width: 600px) {
+
+    /* --- スマホ時の文字サイズ拡大設定 --- */
+    .card h2,
+    .card h3,
+    .portal-card h2,
+    .info-box h3 {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin: 0;
+        width: 100%;
+        white-space: normal;
+        word-break: break-all;
+    }
+
+    .card p,
+    .portal-card p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .btn-style,
+    .card .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    /* --- レイアウト調整 --- */
+    .box-row {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 2%;
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 0;
+    }
+
+    .info-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-width: 0;
+        max-width: 100%;
+        min-height: 75px;
+        padding: 8px 4px;
+        box-sizing: border-box;
+    }
+
+    .info-box i {
+        font-size: 1.1rem;
+        margin-bottom: 3px;
+    }
+
+    .info-box p {
+        display: none;
+    }
+
+    /* セクション別 幅調整 */
+    .row-divider:nth-of-type(1) + .box-row .info-box {
+        flex: 0 0 49%;
+    }
+
+    .row-divider:nth-of-type(1) + .box-row .info-box p {
+        display: block;
+        font-size: 0.6rem;
+        margin: 3px 0 0 0;
+    }
+
+    .row-divider:nth-of-type(2) + .box-row .info-box,
+    .row-divider:nth-of-type(3) + .box-row .info-box,
+    .row-divider:nth-of-type(4) + .box-row .info-box,
+    .box-row .info-box {
+        flex: 0 0 32%;
+    }
+
+    /* 質問エリア・ボタン調整 */
+    .question-section {
+        margin-bottom: 15px;
+    }
+
+    .question-card {
+        padding: 15px 12px;
+        border-radius: 8px;
+    }
+
+    .question-icon {
+        font-size: 26px;
+        margin-bottom: 8px;
+    }
+
+    .question-card p {
+        font-size: 0.7rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+
+    .question-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .question-buttons a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 10px;
+        font-size: 0.8rem;
+        flex: 0 1 auto;
+        width: 40%;
+        max-width: 100px;
+        min-height: 60px;
+        gap: 6px;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
 
     .question-buttons a i {
+        font-size: 1.4rem;
+        margin: 0;
+    }
 
-        font-size: 1rem !important;
-
+    .sponsor-banner {
+        margin: 20px auto;
     }
 
 }
 
+/* YouTubeチャンネルテキストリンク */
+.youtube-info-text .youtube-channel-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
 
+.youtube-info-text .youtube-channel-link:hover {
+    color: #ff0000; /* ホバー時にYouTubeカラー（赤）に変更 */
+    text-decoration: underline;
+}
 
+.youtube-info-text .youtube-channel-link i {
+    font-size: 0.85em;
+    margin-left: 4px;
+}
 
 
 /* ==================================================
-
-   【後半】スマホ版の設定（モバイル・タブレット環境向け）
-
+   記念品紹介セクション
    ================================================== */
-
-
-
-/* --------------------------------------------------
-
-   スマホ・タブレット共通（画面幅768px以下）
-
-   -------------------------------------------------- */
-
-@media (max-width: 768px) {
-
-    /* 大会看板のスマホ最適化 */
-
-
-
-    /* ナビゲーションボタン群の横一列化 */
-
-    .box-row {
-
-        display: flex !important;
-
-        flex-wrap: nowrap !important;
-
-        justify-content: flex-start !important;
-
-        gap: 2% !important;
-
-        width: 100% !important;
-
-        max-width: 100% !important;
-
-        box-sizing: border-box !important;
-
-        margin-bottom: 15px !important;
-
-        padding: 0 !important;
-
-    }
-
-
-
-    .info-box {
-
-        display: flex !important;
-
-        flex-direction: column !important;
-
-        align-items: center !important;
-
-        justify-content: center !important;
-
-        text-align: center !important;
-
-        width: auto !important;
-
-        min-width: 0 !important;
-
-        max-width: 100% !important;
-
-        min-height: 75px !important;
-
-        padding: 8px 4px !important;
-
-        box-sizing: border-box !important;
-
-    }
-
-
-
-    .info-box i {
-
-        font-size: 1.1rem !important;
-
-        margin-bottom: 3px !important;
-
-    }
-
-
-
-    .info-box h3 {
-
-        font-size: 0.5rem !important;
-
-        line-height: 0.8 !important;
-
-        margin: 0 !important;
-
-        width: 100% !important;
-
-        white-space: normal !important;
-
-        word-break: break-all !important;
-
-    }
-
-
-
-    .info-box p {
-
-        display: none !important;
-
-    }
-
-
-
-    /* 各セクションの横幅パーセント調整 */
-
-    .row-divider:nth-of-type(1)+.box-row .info-box {
-
-        flex: 0 0 49% !important;
-
-    }
-
-
-
-    .row-divider:nth-of-type(1)+.box-row .info-box p {
-
-        display: block !important;
-
-        font-size: 0.6rem !important;
-
-        margin: 3px 0 0 0 !important;
-
-    }
-
-
-
-    .row-divider:nth-of-type(2)+.box-row .info-box,
-
-    .row-divider:nth-of-type(3)+.box-row .info-box,
-
-    .row-divider:nth-of-type(4)+.box-row .info-box,
-
-    .box-row .info-box {
-
-        flex: 0 0 32% !important;
-
-    }
-
+/* ==================================================
+   記念品紹介セクション（余白調整済み）
+   ================================================== */
+.goods-section {
+    width: 100%;
+    max-width: 1200px;  /* 他のコンテンツ（.container等）の最大幅に合わせる */
+    margin: 0 auto 40px auto;
+    padding: 0 15px;    /* ★ 左右に余白を設定して画面端にひっつかないようにする */
+    box-sizing: border-box;
+}
+
+/* 記念品カードのグリッド配置（PCは3列） */
+.goods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 記念品カード単体のデザイン */
+.goods-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.goods-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 画像表示枠 */
+.goods-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goods-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.goods-card:hover .goods-image-wrapper img {
+    transform: scale(1.05);
+}
+
+/* 記念品テキスト情報 */
+.goods-info {
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.goods-category {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: #004488;
+    background-color: #eef5ff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    align-self: center;
+}
+
+.goods-info h3 {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+    line-height: 1.3;
 }
 
 
-
-/* --------------------------------------------------
-
-   スマホ専用（画面幅480px以下）
-
-   -------------------------------------------------- */
-
-@media (max-width: 480px) {
-
-    /* 質問エリアの隙間 */
-
-    .question-section {
-
-        margin-bottom: 15px !important;
-
+/* --- スマホ表示時の調整 (600px以下) --- */
+@media (max-width: 600px) {
+    .goods-section {
+        padding: 0 10px; /* スマホ時の左右余白 */
     }
 
-
-
-    /* カードをスマホ用にスリム化 */
-
-    .question-card {
-
-        padding: 15px 12px !important;
-
-        border-radius: 8px !important;
-
+    .goods-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
-
-
-    /* アイコンを小さく */
-
-    .question-icon {
-
-        font-size: 26px !important;
-
-        margin-bottom: 8px !important;
-
+    .goods-info {
+        padding: 10px 8px;
     }
 
-
-
-    /* 説明文を小さく */
-
-    .question-card p {
-
-        font-size: 0.58rem !important;
-
-        line-height: 1.4 !important;
-
-        margin-bottom: 15px !important;
-
+    .goods-category {
+        font-size: 0.65rem;
+        padding: 2px 6px;
     }
 
-
-
-    /* ボタン2つを横並びに */
-
-    .question-buttons {
-
-        display: flex !important;
-
-        flex-direction: row !important;
-
-        gap: 15px !important;
-
-        justify-content: center !important;
-
-        width: 100% !important;
-
+    .goods-info h3 {
+        font-size: 0.85rem;
     }
-
-
-
-    /* ボタンの中身を縦並び（アイコン 改行 文字）にしてスマートにする */
-
-    .question-buttons a {
-
-        display: flex !important;
-
-        flex-direction: column !important;
-
-        align-items: center !important;
-
-        justify-content: center !important;
-
-
-
-        padding: 12px 10px !important;
-
-        font-size: 0.8rem !important;
-
-
-
-        flex: 0 1 auto !important;
-
-        width: 40% !important;
-
-        max-width: 100px !important;
-
-        min-height: 60px !important;
-
-
-
-        gap: 6px !important;
-
-        border-radius: 8px !important;
-
-        box-sizing: border-box !important;
-
-    }
-
-
-
-    .question-buttons a i {
-
-        font-size: 1.4rem !important;
-
-        margin: 0 !important;
-
-    }
-
-} 
+}

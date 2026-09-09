@@ -81,7 +81,7 @@ p.card-notice {
 
     /* タイトル（スマホ：劇的に小さく変更） */
     h1.card-title {
-        font-size: 0.85rem !important;    /* 確実に入る極小サイズ */
+        font-size: 1.2rem !important;    /* 確実に入る極小サイズ */
         line-height: 1.35 !important;
         margin-bottom: 8px !important;
     }
