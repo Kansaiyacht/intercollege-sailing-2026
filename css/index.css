@@ -50,7 +50,7 @@ body {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap; /* スマホ時に折り返せるように変更 */
-    max-width: 850px;
+    max-width: 950px;
     margin: 15px auto;
     padding: 25px 20px;
     

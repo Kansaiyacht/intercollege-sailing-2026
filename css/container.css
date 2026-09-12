@@ -75,8 +75,8 @@ a.info-box * {
 }
 
 /* 1列目のボックス専用の設定：幅を半分にする */
-.special-box {
-    flex: 0 1 50%;
+.info-box.special-box {
+    flex: 0 0 40%;
     margin-right: auto;
 }
 
@@ -102,7 +102,8 @@ a.info-box * {
 .youtube-section-outer {
     width: 100%;
     display: flex;
-    justify-content: center; /* 横方向の中央揃え */
+    justify-content: center;
+    /* 横方向の中央揃え */
     align-items: center;
     padding: 20px 0 40px 0;
     background-color: transparent;
@@ -115,14 +116,18 @@ a.info-box * {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    justify-content: center; /* カード自体を中央に配置 */
+    justify-content: center;
+    /* カード自体を中央に配置 */
 }
 
 .youtube-card {
     background-color: rgba(255, 255, 255, 0.95);
-    width: 100%;            /* 横幅を親要素一杯にしつつ max-width で制限 */
-    max-width: 900px;       /* お好みの最大幅に調整可能 */
-    margin: 0 auto;         /* 左右マージン自動で中央寄せ */
+    width: 100%;
+    /* 横幅を親要素一杯にしつつ max-width で制限 */
+    max-width: 900px;
+    /* お好みの最大幅に調整可能 */
+    margin: 0 auto;
+    /* 左右マージン自動で中央寄せ */
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -148,13 +153,15 @@ a.info-box * {
 }
 
 .video-wrapper a:hover img {
-    opacity: 0.85; /* ホバー時にうっすら透過 */
+    opacity: 0.85;
+    /* ホバー時にうっすら透過 */
 }
 
 /* 動画埋め込み(iframe)切り替え時のスタイル */
 .video-wrapper iframe {
     width: 100%;
-    aspect-ratio: 16 / 9; /* 16:9の比率を維持 */
+    aspect-ratio: 16 / 9;
+    /* 16:9の比率を維持 */
     border: none;
     display: block;
 }
@@ -256,11 +263,14 @@ a.info-box * {
 
 .sponsor-banner img {
     width: 100%;
-    max-width: 1200px; /* バナーの最大幅（containerに合わせる） */
-    height: auto;      /* アスペクト比を維持 */
+    max-width: 1200px;
+    /* バナーの最大幅（containerに合わせる） */
+    height: auto;
+    /* アスペクト比を維持 */
     display: block;
     margin: 0 auto;
-    border-radius: 6px; /* 緩やかな角丸（不要なら削除してください） */
+    border-radius: 6px;
+    /* 緩やかな角丸（不要なら削除してください） */
 }
 
 /* ==================================================
@@ -326,79 +336,147 @@ a.info-box * {
         display: none;
     }
 
-    /* セクション別 幅調整 */
-    .row-divider:nth-of-type(1) + .box-row .info-box {
-        flex: 0 0 49%;
-    }
-
-    .row-divider:nth-of-type(1) + .box-row .info-box p {
-        display: block;
-        font-size: 0.6rem;
-        margin: 3px 0 0 0;
-    }
-
-    .row-divider:nth-of-type(2) + .box-row .info-box,
-    .row-divider:nth-of-type(3) + .box-row .info-box,
-    .row-divider:nth-of-type(4) + .box-row .info-box,
-    .box-row .info-box {
-        flex: 0 0 32%;
-    }
-
-    /* 質問エリア・ボタン調整 */
-    .question-section {
-        margin-bottom: 15px;
-    }
-
-    .question-card {
-        padding: 15px 12px;
-        border-radius: 8px;
-    }
-
-    .question-icon {
-        font-size: 26px;
-        margin-bottom: 8px;
-    }
-
-    .question-card p {
-        font-size: 0.9rem;
-        line-height: 1.4;
-        margin-bottom: 15px;
-    }
-
-    .question-buttons {
-        display: flex;
-        flex-direction: row;
+    .info-box.special-box {
+        display: flex !important;
+        flex-direction: row !important;
+        /* 横並びにして横長にする */
+        align-items: center !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+        flex: 0 0 70% !important;
+        /* 幅100%で配置 */
+        max-width: 100% !important;
+        min-height: auto !important;
+        /* 高さを自動調整 */
+        padding: 16px !important;
+        /* 余白の確保 */
         gap: 15px;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .question-buttons a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 10px;
-        font-size: 0.8rem;
-        flex: 0 1 auto;
-        width: 40%;
-        max-width: 100px;
-        min-height: 60px;
-        gap: 6px;
-        border-radius: 8px;
         box-sizing: border-box;
     }
 
-    .question-buttons a i {
-        font-size: 1.4rem;
+    .info-box.special-box i {
+        font-size: 1.8rem !important;
+        margin-bottom: 0 !important;
+        flex-shrink: 0;
+    }
+
+    .special-box-content {
+        flex: 1;
+    }
+
+    .special-box-content h3 {
+        font-size: 0.95rem !important;
+        margin: 0 0 4px 0 !important;
+    }
+
+    .special-box-content p {
+        display: block !important;
+        /* display: none を打ち消して表示 */
+        font-size: 0.75rem !important;
+        color: #666;
         margin: 0;
+        line-height: 1.4;
     }
 
-    .sponsor-banner {
-        margin: 20px auto;
-    }
 
+    .info-box.photo-box {
+        width: 100%;
+        /* 幅いっぱいに広げる */
+        flex: 0 0 50% !important;
+        max-width: 100%;
+        min-height: auto;
+        /* 75px などの固定制限を解除 */
+        padding: 16px 14px;
+        /* しっかり余白を取って見やすくする */
+    }
 }
+
+.info-box.photo-box i {
+    font-size: 1.8rem;
+
+    /* アイコンを少し調整 */
+}
+
+.photo-box-content h3 {
+    font-size: 0.95rem;
+}
+
+.photo-box-content p {
+    font-size: 0.75rem;
+}
+
+/* セクション別 幅調整 */
+.row-divider:nth-of-type(1)+.box-row .info-box {
+    flex: 0 0 49%;
+}
+
+.row-divider:nth-of-type(1)+.box-row .info-box p {
+    display: block;
+    font-size: 0.6rem;
+    margin: 3px 0 0 0;
+}
+
+.row-divider:nth-of-type(2)+.box-row .info-box,
+.row-divider:nth-of-type(3)+.box-row .info-box,
+.row-divider:nth-of-type(4)+.box-row .info-box,
+.box-row .info-box {
+    flex: 0 0 32%;
+}
+
+/* 質問エリア・ボタン調整 */
+.question-section {
+    margin-bottom: 15px;
+}
+
+.question-card {
+    padding: 15px 12px;
+    border-radius: 8px;
+}
+
+.question-icon {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.question-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.question-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+}
+
+.question-buttons a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 10px;
+    font-size: 0.8rem;
+    flex: 0 1 auto;
+    width: 40%;
+    max-width: 100px;
+    min-height: 60px;
+    gap: 6px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.question-buttons a i {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.sponsor-banner {
+    margin: 20px auto;
+}
+
 
 /* YouTubeチャンネルテキストリンク */
 .youtube-info-text .youtube-channel-link {
@@ -409,7 +487,8 @@ a.info-box * {
 }
 
 .youtube-info-text .youtube-channel-link:hover {
-    color: #ff0000; /* ホバー時にYouTubeカラー（赤）に変更 */
+    color: #ff0000;
+    /* ホバー時にYouTubeカラー（赤）に変更 */
     text-decoration: underline;
 }
 
@@ -420,17 +499,32 @@ a.info-box * {
 
 
 /* ==================================================
-   記念品紹介セクション
-   ================================================== */
-/* ==================================================
-   記念品紹介セクション（余白調整済み）
+   記念品紹介セクション（全体の余白調整）
    ================================================== */
 .goods-section {
     width: 100%;
-    max-width: 1200px;  /* 他のコンテンツ（.container等）の最大幅に合わせる */
+    max-width: 1200px;
+    /* 他のコンテンツの最大幅と統一 */
     margin: 0 auto 40px auto;
-    padding: 0 15px;    /* ★ 左右に余白を設定して画面端にひっつかないようにする */
+    padding: 0 15px;
+    /* ★ 左右の余白を設定 */
     box-sizing: border-box;
+}
+
+/* 小見出し（参加記念品 / 販売記念品） */
+.goods-group-title {
+    font-size: 1.15rem;
+    color: #004488;
+    margin: 30px 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eef5ff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.goods-group-title:first-of-type {
+    margin-top: 0;
 }
 
 /* 記念品カードのグリッド配置（PCは3列） */
@@ -439,6 +533,7 @@ a.info-box * {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     width: 100%;
+    margin-bottom: 30px;
     box-sizing: border-box;
 }
 
@@ -477,9 +572,9 @@ a.info-box * {
     transition: transform 0.3s;
 }
 
-/* 横長画像を枠内に収める指定 */
+/* 白TシャツやステッカーAなど画像全体を納める指定 */
 .goods-image-wrapper.contain-img img {
-    object-fit: contain; /* はみ出しをカットせず、全体を枠内に収める */
+    object-fit: contain;
 }
 
 .goods-card:hover .goods-image-wrapper img {
@@ -508,6 +603,12 @@ a.info-box * {
     align-self: center;
 }
 
+/* 参加賞バッジの特別カラー */
+.goods-category.category-participate {
+    background-color: #ffeef0;
+    color: #d9383a;
+}
+
 .goods-info h3 {
     font-size: 1rem;
     color: #333;
@@ -515,18 +616,28 @@ a.info-box * {
     line-height: 1.3;
 }
 
-
-
+/* 記念品紹介見出し専用の上の余白設定 */
+.row-divider.goods-divider {
+    margin-top: 70px;
+    /* 既存の 40px から 70px に拡大（お好みの広さに調整可能です） */
+}
 
 /* --- スマホ表示時の調整 (600px以下) --- */
 @media (max-width: 600px) {
     .goods-section {
-        padding: 0 10px; /* スマホ時の左右余白 */
+        padding: 0 10px;
+        /* スマホ時の左右余白 */
     }
 
     .goods-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .goods-group-title {
+        font-size: 1rem;
+        margin: 20px 0 10px 0;
     }
 
     .goods-info {
@@ -542,4 +653,3 @@ a.info-box * {
         font-size: 0.85rem;
     }
 }
-
