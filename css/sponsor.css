@@ -3,15 +3,15 @@
 ========================================== */
 
 /* ------------------------------------------
-   1. 大スポンサー用 横長バナー設定（追加部分）
+   1. 大スポンサー用 表示枠（メインバナー）の設定
 ------------------------------------------ */
 .sponsor-banner {
     width: 100%;
     max-width: 850px;       /* 枠の最大横幅 */
-    height: 180px;          /* ★ 枠の固定高さ（この枠内に全ロゴを収める） */
+    height: 180px;          /* 枠の固定高さ（この枠内に全ロゴを収める） */
     margin: 30px auto;
-    padding: 15px 25px;     /* ★ 内側余白（ロゴが枠ギリギリに貼られるのを防ぐ） */
-    background: #ffffff;    /* 白背景（必要に応じて透明背景にする場合は削除可） */
+    padding: 15px 25px;     /* 内側余白 */
+    background: #ffffff;    /* 白背景（背景になじませる場合は transparent に変更可） */
     border: 1px solid #e1e8ed;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -19,6 +19,16 @@
     align-items: center;    /* 上下中央揃え */
     justify-content: center;/* 左右中央揃え */
     box-sizing: border-box;
+}
+
+/* リンクタグを枠いっぱいに広げる設定 */
+.sponsor-banner a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
 }
 
 /* 枠内に収まる画像自体の制御 */
@@ -29,7 +39,14 @@
     height: auto;
     object-fit: contain;    /* 縦横比を完全に維持して枠内に自動収容 */
     display: block;
+    transition: transform 0.2s ease;
 }
+
+/* マウスホバー時に少し拡大 */
+.sponsor-banner a:hover img {
+    transform: scale(1.02);
+}
+
 
 /* ------------------------------------------
    2. 下部 協賛企業グリッド設定
@@ -90,6 +107,7 @@
     object-fit: contain;
 }
 
+
 /* ------------------------------------------
    3. 📱 スマホ版スタイル (600px以下)
 ------------------------------------------ */
@@ -97,7 +115,7 @@
 
     /* 大スポンサーバナー枠のスマホ調整 */
     .sponsor-banner {
-        height: 110px;      /* ★ スマホ画面に合わせた枠の固定高さ */
+        height: 110px;      /* スマホ画面に合わせた枠の固定高さ */
         margin: 20px auto;
         padding: 10px 15px; /* スマホ用余白 */
     }
