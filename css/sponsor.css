@@ -2,6 +2,38 @@
    協賛・ご協賛企業セクション専用CSS (css/sponsor.css)
 ========================================== */
 
+/* ------------------------------------------
+   1. 大スポンサー用 横長バナー設定（追加部分）
+------------------------------------------ */
+.sponsor-banner {
+    width: 100%;
+    max-width: 850px;       /* 枠の最大横幅 */
+    height: 180px;          /* ★ 枠の固定高さ（この枠内に全ロゴを収める） */
+    margin: 30px auto;
+    padding: 15px 25px;     /* ★ 内側余白（ロゴが枠ギリギリに貼られるのを防ぐ） */
+    background: #ffffff;    /* 白背景（必要に応じて透明背景にする場合は削除可） */
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;    /* 上下中央揃え */
+    justify-content: center;/* 左右中央揃え */
+    box-sizing: border-box;
+}
+
+/* 枠内に収まる画像自体の制御 */
+.sponsor-banner img {
+    max-width: 100%;        /* 枠の幅を超えない */
+    max-height: 100%;       /* 枠の高さを超えない */
+    width: auto;
+    height: auto;
+    object-fit: contain;    /* 縦横比を完全に維持して枠内に自動収容 */
+    display: block;
+}
+
+/* ------------------------------------------
+   2. 下部 協賛企業グリッド設定
+------------------------------------------ */
 /* 協賛エリア全体のコンテナ */
 .sponsor-section {
     max-width: 850px;
@@ -58,8 +90,19 @@
     object-fit: contain;
 }
 
-/* 📱 スマホ版スタイル (600px以下)：3列並び (12個で 4×3 の行列) */
+/* ------------------------------------------
+   3. 📱 スマホ版スタイル (600px以下)
+------------------------------------------ */
 @media (max-width: 600px) {
+
+    /* 大スポンサーバナー枠のスマホ調整 */
+    .sponsor-banner {
+        height: 110px;      /* ★ スマホ画面に合わせた枠の固定高さ */
+        margin: 20px auto;
+        padding: 10px 15px; /* スマホ用余白 */
+    }
+
+    /* 下部協賛エリアのスマホ調整 */
     .sponsor-section {
         padding: 15px 10px;
         margin: 15px 10px;

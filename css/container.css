@@ -254,24 +254,6 @@ a.info-box * {
     }
 }
 
-/* --- 横長スポンサーバナーの設定 --- */
-.sponsor-banner {
-    width: 100%;
-    margin: 30px auto;
-    text-align: center;
-}
-
-.sponsor-banner img {
-    width: 100%;
-    max-width: 1200px;
-    /* バナーの最大幅（containerに合わせる） */
-    height: auto;
-    /* アスペクト比を維持 */
-    display: block;
-    margin: 0 auto;
-    border-radius: 6px;
-    /* 緩やかな角丸（不要なら削除してください） */
-}
 
 /* ==================================================
    【後半】スマホ版の設定（画面幅600px以下）
@@ -472,11 +454,6 @@ a.info-box * {
     font-size: 1.4rem;
     margin: 0;
 }
-
-.sponsor-banner {
-    margin: 20px auto;
-}
-
 
 /* YouTubeチャンネルテキストリンク */
 .youtube-info-text .youtube-channel-link {
