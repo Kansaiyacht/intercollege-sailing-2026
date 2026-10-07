@@ -91,6 +91,7 @@
     height: 60px;
     box-sizing: border-box;
     transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
 }
 
 .sponsor-card:hover {
@@ -100,11 +101,12 @@
 
 /* 🖼️ 画像の縦横比を崩さず枠内に収める設定 */
 .sponsor-card img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    max-width: 100% !important;   /* ★ 強制的にカードの幅を超えないようにする */
+    max-height: 100% !important;  /* ★ 強制的にカードの高さを超えないようにする */
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important; /* ★ 縦横比を維持して枠内に自動収容 */
+    display: block;
 }
 
 
